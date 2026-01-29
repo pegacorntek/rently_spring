@@ -1,0 +1,77 @@
+spring:
+  application:
+    name: rently
+
+  ai:
+    openai:
+      api-key: "your_openai_api_key_here"
+      chat:
+        options:
+          model: gpt-5-mini
+          temperature: 1
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/rently?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: "your_database_password_here"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 300000
+      connection-timeout: 20000
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 50MB
+
+server:
+  port: 8000
+  address: 0.0.0.0
+  servlet:
+    context-path: /api/v1
+
+jwt:
+  secret: your_jwt_secret_key_here_minimum_32_characters_recommended
+  expiration: 86400000
+  refresh-expiration: 604800000
+
+upload:
+  path: ./uploads or absolute path to uploads folder
+
+logging:
+  level:
+    com.pegacorn.rently: DEBUG
+    org.springframework.security: DEBUG
+
+# CORS configuration
+cors:
+  allowed-origins: "*"
+#  allowed-origins: "http://localhost:5173,"
+
+# VAPID keys for Web Push Notifications
+vapid:
+  public-key: your_vapid_public_key_here
+  private-key: your_vapid_private_key_here
+  subject: mailto:admin@example.com
+
+# TexRoute SMS API
+texroute:
+  enabled: false
+  api-key: your_texroute_api_key_here
+  device-id: your_device_id_here
+
+# App configuration
+app:
+  base-url: ${APP_BASE_URL:http://localhost:5173}
+
+# AI Chat configuration
+ai-chat:
+  cooldown-seconds: ${AI_CHAT_COOLDOWN:300}

@@ -1,0 +1,125 @@
+# Build output
+target/
+build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.flattened-pom.xml
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+*.gradle
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# IDE - Eclipse / STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+bin/
+
+# IDE - NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# IDE - VS Code
+.vscode/
+
+# Environment & Secrets
+.env
+.env.*
+application.yml
+application.properties
+application-*.yml
+application-*.properties
+*.pem
+*.key
+*.p12
+*.jks
+
+# Firebase
+*firebase*.json
+*service-account*.json
+*serviceAccount*.json
+
+# Logs
+logs/
+*.log
+spring.log
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Runtime
+*.pid
+*.seed
+hs_err_pid*
+replay_pid*
+
+# Test
+/coverage/
+/test-results/
+/surefire-reports/
+
+# Misc
+*.bak
+*.tmp
+*.temp
+*~
+
+# Nested git repo (if exists)
+rently_spring/
+
+# Uploaded files (images, documents, etc.)
+uploads/
+src/main/resources/uploads/
+src/main/resources/static/uploads/
+
+# AI-related files and folders
+.claude/
+.cursor/
+.aider/
+.copilot/
+.codeium/
+.tabnine/
+.continue/
+.windsurf/
+.cline/
+CLAUDE.md
+.claudeignore
+.cursorignore
+.aiderignore
+.cursorrules
+.windsurfrules
+.clinerules
+.github/copilot-instructions.md
